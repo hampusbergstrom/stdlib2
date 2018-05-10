@@ -29,7 +29,7 @@ datetime_test()  -> {{_Ye, _Mo, _Da}, {_Ho, _Mi, _Se}} = datetime().
 stamp()       -> stamp(now).
 
 -ifdef(has_erlang_now).
-stamp(now)    -> now_to_microsecs(now());
+stamp(now)    -> now_to_microsecs(os:timestamp());
 stamp(os)     -> now_to_microsecs(os:timestamp()).
 -else.
 stamp(now)    -> monotonic_us();
